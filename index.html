@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Is my webcam centered?</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@700&family=Roboto:wght@700&display=swap" rel="stylesheet">
@@ -14,11 +14,25 @@
   <input type="number" placeholder="Webcam size" />
   <div id="line"></div>
 
-  <p>Turn on full-screen to see if your webcam is aligned with the line at the center of the screen</p>
+  <p>Turn on full-screen mode to see if your webcam is aligned with the line at the center of the screen</p>
 
   <script>
+    const elem = document.documentElement;
+
+    function openFullscreen() {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+      }
+    }
+
     const input = document.querySelector('input');
     const line = document.querySelector('#line');
+
+    window.addEventListener('click', () => openFullscreen())
     input.addEventListener('keyup', () => line.style.width = `${input.value}px`);
   </script>
 </body>
