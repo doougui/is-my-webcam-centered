@@ -5,7 +5,7 @@
   </a>
 </p>
 
-> EXTREMELY silly repo to make sure my webcam is centered on my monitor
+> EXTREMELY silly repo to make sure your webcam is centered with your monitor
 
 ### 🏠 [Homepage](https://doougui.github.io/is-my-webcam-centered/)
 
